@@ -1,6 +1,7 @@
 //- -var titulo = "TITULO PRINCIPAL"
 -var titulos = ['TITULO PRINCIPAL','SUBTITULO1','SUBTITULO2','SUBTITULO3']
 -var usuario = 'Jose'
+-var enlaces = ['ACERCA','NOTICIAS','CONTACTO']
 mixin caja(imagen,titulo,contenido) 
     section.container 
         .main__container-img
@@ -42,6 +43,10 @@ html(lang="en")
         +caja('usuario.png',titulos[2],'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias quas rem neque eos. Vel veniam facilis earum beatae, eaque amet nostrum illo, ullam quam labore officia, corporis sit accusamus nam!')
         +caja('usuario.png',titulos[3],'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias quas rem neque eos. Vel veniam facilis earum beatae, eaque amet nostrum illo, ullam quam labore officia, corporis sit accusamus nam!')
 
-    
-        
-         
+    footer 
+        .footer__title
+            h1 PLATZIGAMES 
+        .footer__enlaces
+            ul 
+                each enlace in  enlaces 
+                    li=enlace         
