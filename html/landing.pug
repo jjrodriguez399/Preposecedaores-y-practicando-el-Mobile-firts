@@ -1,0 +1,47 @@
+//- -var titulo = "TITULO PRINCIPAL"
+-var titulos = ['TITULO PRINCIPAL','SUBTITULO1','SUBTITULO2','SUBTITULO3']
+-var usuario = 'Jose'
+mixin caja(imagen,titulo,contenido) 
+    section.container 
+        .main__container-img
+            img(src="../img/"+imagen) 
+        .main__container-text 
+            h2=titulo 
+            p=contenido 
+
+
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Empezando con pug 
+        link(rel="stylesheet", href="../css/pug.css")
+    body 
+    header 
+        h1 PLATZIGAMES
+        if usuario
+         a(href="") Hola #{usuario}
+        else  
+         a( href="") REGISTRO
+    section.intro 
+        .intro__imagen: img(src="../img/usuario.png", alt="")
+        .intro__contenido
+            h2 #{titulos[0]}
+            p
+                Lorem Lorem ipsum, dolor sit amet consectetur      adipisicing elit. Alias quas rem neque eos.  Vel veniam facilis earum beatae, eaque amet  nostrum illo, ullam quam labore officia,    corporis sit accusamus nam! 
+                br 
+                strong  En esta clase vemos cómo anidar elementos dentro de otros en PUG y cómo trabajar con textos de múltiples lineas.
+              
+             
+            a(href="") LEER MAS
+    main 
+        +caja('usuario.png',titulos[1],'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias quas rem neque eos. Vel veniam facilis earum beatae, eaque amet nostrum illo, ullam quam labore officia, corporis sit accusamus nam!')
+        +caja('usuario.png',titulos[2],'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias quas rem neque eos. Vel veniam facilis earum beatae, eaque amet nostrum illo, ullam quam labore officia, corporis sit accusamus nam!')
+        +caja('usuario.png',titulos[3],'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias quas rem neque eos. Vel veniam facilis earum beatae, eaque amet nostrum illo, ullam quam labore officia, corporis sit accusamus nam!')
+
+    
+        
+         
